@@ -1,5 +1,6 @@
 # java-spring-project
-A project I made for school using Spring Boot in Java
+A project I made for school using Spring Boot in Java.
+
 ## Untitled Java Spring Project
 
 My Spring Boot-based application for the for a university class.
