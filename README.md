@@ -1,18 +1,22 @@
-## TJV-Application
+# java-spring-project
+A project I made for school using Spring Boot in Java
+## Untitled Java Spring Project
 
-My Spring Boot-based application for the TJV class.
-This is the server side. The client side is in
-another repository: [https://gitlab.fit.cvut.cz/udaviyur/tjvclient](https://gitlab.fit.cvut.cz/udaviyur/tjvclient)
+My Spring Boot-based application for the for a university class.
+The project is a three-layer application, complete with a functional REST API,
+a business logic layer and a data manipulation layer. All three layers are
+covered by unit tests. The application itself uses a PostgreSQL database installed
+on the user's PC (Docker functionality is NOT implemented) while the tests use
+an in-memory H2 database instead.
 
 #### Prerequisites for running the server
-Need to have PostgreSQL installed and running in your system.
-If there's anything in the database before the app
-will clear it out after starting and set up its own
-entities.
+PostgreSQL needs to be installed and running on your system.
+Upon launching the app clears anything that may or may not have been
+in the database prior and initializes tables needed for its operation.
 
 #### Running the server
-Click on the green arrow in TjvApplication.java.
-Gradle's bootRun also seems to work.
+The application supports classic gradle commands for building and
+running the app.
 
 #### Communicating with the server
 REST API is supported. By default the address of
