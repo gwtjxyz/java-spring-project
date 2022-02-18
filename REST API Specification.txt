@@ -1,0 +1,55 @@
+REST API SPECIFICATION FOR REQUESTS
+
+root: "http://localhost/9090/api"
+
++
+
+class specific: "/agents", "/clients", "/contracts"
+
++
+
+common for every entity:
+
+GET method on class specific returns all
+
+POST method on class specific adds new entry
+
+entity data entries:
+    contract: codename, date, fee
+        extra: assigned agents (M:N), created by client (N:1)
+    agent: name, countery, nickname
+        extra: assigned to contracts (M:N)
+    client: name, country
+        extra: created contracts (1:N)
+
+specifics:
+
+get:
+
+"{parameterName}/{parameterValue}"
+    agents: id, name, nickname, country
+    contracts: id, codename
+    clients: id, name, country
+
+update:
+
+"{id}" + JSON in body
+
+delete:
+
+"{id}"
+
+creating relationships:
+    agent: PUT "{agentId}/assign/{contractId}"
+    client: PUT "{clientId}/assign/{contractId}"
+    contract: PUT "{contractId}/assign/client/{clientId}",
+              PUT "{contractId}/assign/agent/{agentId}"
+
+super extra special display logic (contracts only):
+
+
+examples:
+
+GET "/api/agents/id/1"
+DELETE "/api/agents/nickname/The Wise One"
+PUT "/api/agents/3" + relevant JSON inside request body

@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+
+}
+
+group = 'cz.cvut.fit.udaviyur'
+version = '0.2.0-RELEASE'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.1'
+    runtimeOnly 'org.postgresql:postgresql:42.3.1'
+
+	testImplementation 'junit:junit:4.13.1'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+	testImplementation 'com.h2database:h2:2.0.206'
+}
+
+test {
+	useJUnitPlatform()
+}
